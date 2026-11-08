@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPI Sistem Pengapian Sepeda Motor - Kelas XI</title>
+<style>
+:root{--navy:#12345a;--blue:#1976d2;--sky:#eaf4ff;--cyan:#55c3e8;--gold:#ffca57;--ink:#203047;--muted:#60738a;--white:#fff;--green:#16865b;--red:#c84444}
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f3f7fc;color:var(--ink);line-height:1.55}
+header{background:linear-gradient(125deg,#102d50,#1976d2);color:white;padding:26px 20px 22px}
+.header-inner{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-size:13px;letter-spacing:2px;font-weight:700;color:#bfe5ff}.hero h1{font-size:clamp(26px,4vw,42px);line-height:1.15;margin:8px 0}.hero p{margin:8px 0;color:#e3f2ff}.pill{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;padding:7px 12px;border-radius:30px;font-size:12px}
+.layout{max-width:1120px;margin:22px auto;padding:0 16px;display:grid;grid-template-columns:245px 1fr;gap:20px}
+nav{background:white;border-radius:16px;padding:14px;box-shadow:0 5px 20px #153b6010;height:max-content;position:sticky;top:14px}
+nav h3{margin:6px 8px 12px;color:var(--navy)}nav button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:11px 12px;border-radius:10px;color:#42566e;font-weight:600;cursor:pointer;margin:3px 0}nav button:hover,nav button.active{background:var(--sky);color:var(--blue)}
+main{min-width:0}.panel{display:none;background:white;border-radius:18px;padding:clamp(18px,3vw,30px);box-shadow:0 5px 20px #153b6010;animation:fade .2s}.panel.active{display:block}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{color:var(--navy);margin:0 0 12px;font-size:27px}h3{color:var(--navy)}.lead{color:var(--muted);font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px;margin:18px 0}.card{background:#f4f9ff;border:1px solid #dcecff;border-radius:13px;padding:16px}.card strong{display:block;color:var(--blue);font-size:17px;margin-bottom:5px}
+.callout{background:#fff8e5;border-left:4px solid var(--gold);padding:14px 16px;border-radius:9px;margin:16px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0}.flow span{padding:11px 14px;background:#e8f4ff;border:1px solid #b8dcff;border-radius:10px;font-weight:700;color:#14599b}.flow b{color:#6c8197}
+ul,ol{padding-left:23px}.checklist li{margin:8px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}th,td{padding:10px;border:1px solid #d9e4ef;text-align:left}th{background:#eaf4ff;color:#174d83}
+button.action{background:var(--blue);color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer}button.action:hover{background:#105eae}button.secondary{background:#edf4fb;color:#24527f}
+.quiz-item{padding:15px 0;border-bottom:1px solid #e5edf5}.quiz-item p{font-weight:700;margin:0 0 9px}.quiz-item label{display:block;padding:6px 8px;cursor:pointer;border-radius:8px}.quiz-item label:hover{background:#f3f8ff}.feedback{margin-top:8px;font-weight:700}.score{font-size:23px;font-weight:800;color:var(--blue)}
+footer{text-align:center;color:#6d7f91;padding:20px;font-size:13px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}nav{position:static}nav button{display:inline-block;width:auto}.two{grid-template-columns:1fr}.header-inner{display:block}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="hero">
+<div class="brand">MEDIA PEMBELAJARAN INTERAKTIF • TEKNIK SEPEDA MOTOR</div>
+<h1>Sistem Pengapian<br>Sepeda Motor Jupiter Z</h1>
+<p>Untuk SMK/MAK Kelas XI · Disusun oleh Ari Anggara, S.Pd.</p>
+<span class="pill">Belajar • Eksplorasi • Evaluasi</span>
+</div><div style="font-size:68px" aria-hidden="true">⚡</div></div></header>
+<div class="layout">
+<nav aria-label="Navigasi materi"><h3>Menu Pembelajaran</h3>
+<button class="active" data-target="beranda">🏠 Beranda</button>
+<button data-target="tujuan">🎯 Tujuan & Kompetensi</button>
+<button data-target="konsep">📘 Konsep Dasar</button>
+<button data-target="komponen">🔧 Komponen</button>
+<button data-target="cara">⚡ Cara Kerja</button>
+<button data-target="praktik">🧰 Praktikum</button>
+<button data-target="evaluasi">📝 Evaluasi</button>
+<button data-target="refleksi">💡 Refleksi</button>
+</nav>
+<main>
+<section id="beranda" class="panel active">
+<h2>Selamat Datang!</h2><p class="lead">MPI (Media Pembelajaran Interaktif) Sistem Pengapian Sepeda Motor disusun sebagai pendamping belajar materi pemeriksaan dan perbaikan sistem pengapian Jupiter Z.</p>
+<div class="cards"><div class="card"><strong>01 · Pahami</strong>Pelajari konsep dan fungsi komponen.</div><div class="card"><strong>02 · Telusuri</strong>Amati alur kerja sistem pengapian.</div><div class="card"><strong>03 · Praktikkan</strong>Lakukan pemeriksaan sesuai SOP dan keselamatan kerja.</div><div class="card"><strong>04 · Uji Diri</strong>Kerjakan evaluasi interaktif.</div></div>
+<div class="callout"><b>Petunjuk penggunaan:</b> pilih menu di samping. Bacalah materi secara berurutan, lakukan kegiatan praktikum dengan pengawasan guru/instruktur, kemudian selesaikan evaluasi.</div>
+<h3>Pertanyaan pemantik</h3><p>Sepeda motor sulit hidup dan busi tidak menghasilkan bunga api. Komponen apa saja yang perlu diperiksa, dan bagaimana menentukan penyebab gangguan?</p>
+</section>
+<section id="tujuan" class="panel">
+<h2>Kompetensi & Tujuan Pembelajaran</h2><h3>Kompetensi</h3><p>Memperbaiki sistem pengapian sepeda motor Jupiter Z.</p><h3>Setelah pembelajaran, peserta didik mampu:</h3>
+<ol><li>Memahami cara kerja sistem pengapian sepeda motor Jupiter Z.</li><li>Memahami fungsi masing-masing komponen sistem pengapian.</li><li>Memahami jalur kabel/wiring diagram sistem pengapian.</li><li>Memahami perakitan sistem pengapian.</li><li>Memahami cara memperbaiki sistem pengapian sesuai SOP.</li></ol>
+<div class="callout">Model pembelajaran yang dapat digunakan: Problem Based Learning (PBL), dengan masalah awal berupa gangguan atau tidak adanya percikan bunga api pada busi.</div>
+</section>
+<section id="konsep" class="panel">
+<h2>Konsep Dasar Sistem Pengapian</h2><p>Sistem pengapian merupakan salah satu komponen utama mesin sepeda motor yang bertanggung jawab menghasilkan bunga api di ruang bakar. Bunga api diperlukan untuk membakar campuran bahan bakar dan udara sehingga menghasilkan tenaga untuk menggerakkan sepeda motor.</p>
+<div class="two"><div class="card"><strong>Pengapian AC</strong>Sumber listrik pengapian berasal langsung dari alternator/generator pembangkit arus AC.</div><div class="card"><strong>Pengapian DC</strong>Sumber arus pengapian berasal dari baterai/aki (arus DC).</div></div>
+<p>Materi pada media ini membahas sistem pengapian Jupiter Z berarus DC. Pada sistem ini, stator coil terdiri atas kumparan penerangan dan kumparan pengisian.</p>
+<h3>Istilah penting</h3><ul><li><b>DC (Direct Current):</b> arus searah.</li><li><b>Timing pengapian:</b> waktu terjadinya pengapian yang ditentukan berdasarkan posisi mesin.</li><li><b>Wiring diagram:</b> diagram jalur kabel dan hubungan komponen kelistrikan.</li></ul>
+</section>
+<section id="komponen" class="panel">
+<h2>Komponen Sistem Pengapian</h2><p>Pilih dan pahami fungsi tiap komponen berikut.</p>
+<div class="cards"><div class="card"><strong>🔋 Baterai (Accu)</strong>Sumber tegangan DC, umumnya 12 V. Berperan menyimpan dan menyediakan energi listrik.</div>
+<div class="card"><strong>📍 Pick up coil / Pulser</strong>Mendeteksi posisi piston/rotor dan memberikan sinyal untuk menentukan timing pengapian.</div>
+<div class="card"><strong>🧠 CDI</strong>Saklar rangkaian primer pengapian yang mengatur pengisian dan pengosongan muatan kapasitor.</div>
+<div class="card"><strong>🌀 Ignition coil</strong>Menaikkan tegangan menjadi tegangan tinggi yang diperlukan untuk pengapian melalui induksi elektromagnetik.</div>
+<div class="card"><strong>⚡ Spark plug / Busi</strong>Mengubah tegangan tinggi menjadi loncatan bunga api melalui elektroda busi.</div></div>
+<h3>Pasangkan komponen dengan fungsinya</h3>
+<div class="quiz-item"><p>Komponen yang menentukan timing pengapian berdasarkan sinyal posisi mesin:</p><select id="match1"><option value="">-- Pilih --</option><option>CDI</option><option>Pick up coil</option><option>Busi</option></select></div>
+<div class="quiz-item"><p>Komponen yang menaikkan tegangan untuk menghasilkan percikan pada busi:</p><select id="match2"><option value="">-- Pilih --</option><option>Baterai</option><option>Ignition coil</option><option>Pick up coil</option></select></div>
+<button class="action" onclick="checkMatch()">Periksa Jawaban</button><div id="matchFeedback" class="feedback"></div>
+</section>
+<section id="cara" class="panel">
+<h2>Alur Cara Kerja Sistem Pengapian</h2><p>Ringkasan urutan kerja berdasarkan materi yang dipelajari:</p>
+<div class="flow"><span>Poros engkol berputar</span><b>→</b><span>Rotor magnet berputar</span><b>→</b><span>Stator menghasilkan arus</span><b>→</b><span>Regulator/rectifier</span></div>
+<div class="flow"><span>Baterai & kunci kontak</span><b>→</b><span>CDI menyimpan muatan</span><b>→</b><span>Pick up coil memberi sinyal timing</span></div>
+<div class="flow"><span>CDI melepas muatan</span><b>→</b><span>Ignition coil menaikkan tegangan</span><b>→</b><span>Busi memercikkan bunga api</span></div>
+<h3>Penjelasan</h3><ol><li>Poros engkol dan rotor magnet berputar, sehingga stator coil menghasilkan arus listrik.</li><li>Arus menuju regulator/rectifier untuk distabilkan, kemudian arus DC diteruskan ke kunci kontak dan baterai.</li><li>Arus DC diteruskan ke CDI dan disimpan pada kapasitor.</li><li>Pick up coil memberi sinyal untuk menentukan timing. CDI kemudian melepas muatan menuju ignition coil.</li><li>Ignition coil memperbesar tegangan dan mengirimkannya ke busi melalui kabel tegangan tinggi.</li></ol>
+<div class="callout"><b>Diskusi:</b> Mengapa timing pengapian harus tepat? Jelaskan hubungan sinyal pick up coil, CDI, ignition coil, dan busi.</div>
+</section>
+<section id="praktik" class="panel">
+<h2>Praktikum Pemeriksaan Sistem Pengapian</h2><h3>Alat dan bahan</h3><ul class="checklist"><li>Unit sepeda motor</li><li>Tools box</li><li>Multitester</li><li>Nampan dan majun</li><li>Buku manual</li><li>Feeler gauge</li><li>Ignition checker</li></ul>
+<h3>Keselamatan kerja</h3><ol><li>Gunakan pakaian praktik.</li><li>Gunakan alat sesuai fungsi dan spesifikasinya.</li><li>Jaga kebersihan tempat praktik.</li><li>Tandai komponen sebelum pembongkaran untuk memudahkan perakitan.</li><li>Ikuti prosedur dan tanyakan kepada instruktur jika ragu.</li><li>Hindari kehilangan alat/komponen dan catat hasil pemeriksaan.</li><li>Ikuti instruksi guru/instruktur.</li></ol>
+<h3>Data standar pemeriksaan (sesuai materi)</h3><table><thead><tr><th>No.</th><th>Item pemeriksaan</th><th>Standar</th><th>Hasil</th></tr></thead><tbody>
+<tr><td>1</td><td>Baterai/aki</td><td>12,8 V atau lebih (20°C)</td><td><input class="result" placeholder="Isi hasil"></td></tr>
+<tr><td>2</td><td>Fuse/sekring</td><td>7 A</td><td><input class="result" placeholder="Isi kondisi"></td></tr>
+<tr><td>3</td><td>Celah busi</td><td>0,6–0,7 mm</td><td><input class="result" placeholder="Isi hasil (mm)"></td></tr>
+<tr><td>4</td><td>Loncatan bunga api</td><td>Minimum 6 mm</td><td><input class="result" placeholder="Isi hasil (mm)"></td></tr>
+<tr><td>5</td><td>Tahanan cap busi</td><td>7,5–12,5 kΩ (20°C)</td><td><input class="result" placeholder="Isi hasil (kΩ)"></td></tr>
+<tr><td>6</td><td>Tahanan primary coil</td><td>0,32–0,48 Ω</td><td><input class="result" placeholder="Isi hasil (Ω)"></td></tr>
+<tr><td>7</td><td>Tahanan secondary coil</td><td>5,56–8,52 kΩ</td><td><input class="result" placeholder="Isi hasil (kΩ)"></td></tr>
+<tr><td>8</td><td>Tahanan pick up coil</td><td>248–372 Ω</td><td><input class="result" placeholder="Isi hasil (Ω)"></td></tr></tbody></table>
+<button class="action" onclick="window.print()">Cetak Lembar Praktikum</button>
+<p class="callout">Catatan: lakukan pengukuran dengan prosedur pada buku manual dan di bawah pengawasan guru. Data standar di atas mengikuti dokumen materi yang diberikan.</p>
+</section>
+<section id="evaluasi" class="panel">
+<h2>Evaluasi Interaktif</h2><p>Jawablah 5 pertanyaan berikut. Pilih satu jawaban yang paling tepat, lalu klik <b>Nilai Jawaban</b>.</p>
+<form id="quiz">
+<div class="quiz-item"><p>1. Fungsi utama sistem pengapian adalah…</p><label><input type="radio" name="q1" value="a"> Mengatur tekanan ban</label><label><input type="radio" name="q1" value="b"> Menghasilkan bunga api untuk membakar campuran udara dan bahan bakar</label><label><input type="radio" name="q1" value="c"> Melumasi piston</label></div>
+<div class="quiz-item"><p>2. Sumber arus sistem pengapian DC adalah…</p><label><input type="radio" name="q2" value="a"> Baterai/aki</label><label><input type="radio" name="q2" value="b"> Busi</label><label><input type="radio" name="q2" value="c"> Roda</label></div>
+<div class="quiz-item"><p>3. Komponen yang menentukan timing pengapian dengan mendeteksi posisi rotor adalah…</p><label><input type="radio" name="q3" value="a"> Fuse</label><label><input type="radio" name="q3" value="b"> Ignition coil</label><label><input type="radio" name="q3" value="c"> Pick up coil</label></div>
+<div class="quiz-item"><p>4. Komponen yang menaikkan tegangan untuk pengapian adalah…</p><label><input type="radio" name="q4" value="a"> CDI</label><label><input type="radio" name="q4" value="b"> Ignition coil</label><label><input type="radio" name="q4" value="c"> Baterai</label></div>
+<div class="quiz-item"><p>5. Standar celah busi pada materi Jupiter Z adalah…</p><label><input type="radio" name="q5" value="a"> 1,5–2,0 mm</label><label><input type="radio" name="q5" value="b"> 0,6–0,7 mm</label><label><input type="radio" name="q5" value="c"> 5,56–8,52 mm</label></div>
+<button class="action" type="button" onclick="gradeQuiz()">Nilai Jawaban</button> <button class="action secondary" type="reset" onclick="document.getElementById('quizResult').innerHTML=''">Ulangi</button>
+</form><div id="quizResult" aria-live="polite"></div>
+</section>
+<section id="refleksi" class="panel">
+<h2>Refleksi Pembelajaran</h2><p>Isilah refleksi singkat berikut berdasarkan pengalaman belajar.</p>
+<label><b>1. Hal baru yang saya pahami:</b></label><textarea rows="3" style="width:100%;padding:10px;border:1px solid #cbd9e8;border-radius:9px;margin:8px 0 14px" placeholder="Tuliskan pemahaman baru..."></textarea>
+<label><b>2. Bagian yang masih membingungkan:</b></label><textarea rows="3" style="width:100%;padding:10px;border:1px solid #cbd9e8;border-radius:9px;margin:8px 0 14px" placeholder="Tuliskan hal yang belum dipahami..."></textarea>
+<label><b>3. Saat praktik, saya sudah mampu:</b></label><textarea rows="3" style="width:100%;padding:10px;border:1px solid #cbd9e8;border-radius:9px;margin:8px 0 14px" placeholder="Tuliskan keterampilan yang dikuasai..."></textarea>
+<button class="action" onclick="alert('Refleksi dapat dicetak melalui menu Cetak browser. Pastikan jawaban sudah ditulis.')">Selesai Refleksi</button>
+</section>
+</main></div>
+<footer>MPI Sistem Pengapian Sepeda Motor Jupiter Z · Teknik Sepeda Motor Kelas XI · Ari Anggara, S.Pd.</footer>
+<script>
+const navButtons=document.querySelectorAll('nav button'), panels=document.querySelectorAll('.panel');
+navButtons.forEach(btn=>btn.addEventListener('click',()=>{navButtons.forEach(b=>b.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.target).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}));
+function checkMatch(){let a=document.getElementById('match1').value,b=document.getElementById('match2').value;let out=document.getElementById('matchFeedback');if(!a||!b){out.textContent='Pilih jawaban untuk kedua pertanyaan terlebih dahulu.';out.style.color='var(--red)';return}let score=(a==='Pick up coil')+(b==='Ignition coil');out.textContent=score===2?'Hebat! Semua jawaban benar.':'Jawaban benar: Pick up coil dan Ignition coil. Coba pelajari kembali fungsi komponen.';out.style.color=score===2?'var(--green)':'var(--red)'}
+function gradeQuiz(){const answers={q1:'b',q2:'a',q3:'c',q4:'b',q5:'b'};let score=0,answered=0;Object.keys(answers).forEach(q=>{let picked=document.querySelector('input[name="'+q+'"]:checked');if(picked){answered++;if(picked.value===answers[q])score++}});let out=document.getElementById('quizResult');if(answered<5){out.innerHTML='<p class="feedback" style="color:var(--red)">Anda baru menjawab '+answered+' dari 5 soal. Lengkapi seluruh jawaban.</p>';return}let msg=score>=4?'Sangat baik!':score>=3?'Baik, terus tingkatkan pemahaman.':'Pelajari kembali materi lalu coba ulang.';out.innerHTML='<p class="score">Skor: '+score+'/5 ('+(score*20)+'%)</p><p>'+msg+'</p>';out.scrollIntoView({behavior:'smooth',block:'nearest'})}
+</script>
+</body></html>
